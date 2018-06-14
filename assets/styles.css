@@ -1,0 +1,849 @@
+body{
+  margin:0;
+  font-family: 'Dosis', sans-serif;
+  background: #e3e8ef;
+  color: white;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+#header{
+  grid-column: 1/5;
+  padding: 20px;
+  background: white;
+  box-shadow: 1px 0px 20px 0.1px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#header .base_logo{
+  grid-column: 2/3;
+  grid-row: 1/2
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#header .logout{
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header .logout button{
+  padding:10px;
+  border-radius: 4px;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: #6F4074;
+  outline: none;
+}
+
+#header .logout button:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#header .feedback{
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#header .feedback a{
+  text-decoration: none;
+  border: 1px #6F4074 solid;
+  color: #6F4074;
+  padding: 7px;
+  border-radius: 4px;
+  outline: none;
+}
+
+#header .feedback a:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#header .tools{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header .tools .dropbtn{
+  padding:10px;
+  border-radius: 4px;
+  display: none;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: #6F4074;
+  clear: both;
+  outline: none;
+}
+
+#header .tools .dropbtn:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#header .tools .tools_list_class{
+  padding:0;
+}
+
+
+
+#header .tools li{
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  border: solid #6F4074 1px;
+  margin-right: 10px;
+  float: left;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+#header .tools li:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+}
+
+#header .tools li a{
+  text-decoration: none;
+  color: #6F4074;
+}
+
+#header .tools li a:hover{
+  color: white;
+}
+
+#header img{
+  margin: 0;
+  height: 70px;
+
+}
+
+#header .upload{
+  grid-column: 3/4;
+}
+
+#section{
+  grid-column: 1/5;
+}
+
+#footer{
+  grid-column: 1/5;
+  grid-rows:4/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: white;
+  padding:10px;
+  box-shadow: 1px 0px 20px 0.1px;
+}
+
+#footer .home_logo{
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_logo img{
+  height: 70px;
+}
+
+#footer .about{
+  grid-column: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#footer .contact{
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about a, .contact a{
+    text-decoration: none;
+    border: 1px #6F4074 solid;
+    color: #6F4074;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+}
+.about a:hover, .contact a:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color: white;
+}
+
+/* Styling the papers page */
+.papers{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+
+.papers .paper{
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border: 1px solid #572677;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+}
+
+#content h1{
+  color: white;
+}
+
+.papers .paper p{
+  margin: 0;
+}
+
+.papers .upload{
+  display: flex;
+  align-items: center;
+}
+.papers .upload a{
+  text-align: center;
+  padding: 10px;
+  border: solid #6F4074 1px;
+  margin-right: 10px;
+  float: left;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #6F4074;
+}
+
+.papers .upload a:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+.upload_notes h1{
+  text-align: center;
+}
+
+.upload_paper h1{
+  text-align: center;
+}
+
+.upload_links h1{
+  text-align: center;
+}
+
+#filter-div .filter-form{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+#filter-div .filter-form p{
+  margin-right: 0;
+}
+
+#filter-div .filter-form #id_branch, #filter-div .filter-form #id_semester, #filter-div .filter-form #id_year{
+  border: none;
+  border-bottom: 1px solid #6F4074;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  margin-right: 20px;
+}
+
+#id_branch option[value='']{
+  display:none;
+}
+
+#filter-div .filter-form .filter-search{
+  padding:10px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid #6F4074;
+  cursor: pointer;
+  color: white;
+  }
+
+#filter-div .filter-form .filter-search:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#id_topic_of_link{
+  color: white;
+}
+
+/* Styling the Notes Page */
+.notes{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.notes .note{
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border: 1px solid #572677;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.notes .note p{
+  margin: 0;
+}
+
+/* Styling the links page */
+.links{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.links .link{
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border: 1px solid #572677;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+}
+
+#id_topic_of_link{
+  border: none;
+  border-bottom: 1px solid #6F4074;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  margin-right: 20px;
+}
+
+/* Styling the login page */
+#section #content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  color:  #2a2b2d;
+  margin-bottom: 10px;
+}
+
+#content .site-form{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
+
+#content .site-form label{
+  font-weight: bolder;
+}
+
+#content h1{
+  text-align: center;
+}
+
+#content .site-form input[type=text], #content .site-form input[type=password]{
+  border: none;
+  border-bottom: 1px solid #2a2b2d;
+  padding: 10px;
+  background: transparent;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 2px;
+}
+
+#content .site-form input[type=text]:focus, #content .site-form input[type=password]:focus{
+  border-bottom: 2px solid #6F4074;
+}
+
+#content .site-form input[type=password]{
+  margin-bottom: 20px;
+}
+
+#content .site-form input[type=submit]{
+  padding:10px;
+  border-radius: 4px;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+#content .site-form input[type=submit]:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#content .site-form p{
+  font-weight: bolder;
+  color: red;
+  margin: 0;
+}
+
+#content .site-form .warning{
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#content .site-form li{
+  list-style-type: none;
+  color: red;
+  font-weight: bolder;
+}
+
+#content .site-form select{
+  border: none;
+  border-bottom: 1px solid #6F4074;
+  background: transparent;
+  outline: none;
+  text-align: center;
+}
+
+/* Styling the signup page */
+#content .signup-form{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+#content .signup-form .helptext{
+  margin-top: -30px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#content .signup-form input[name=first_name]{
+  margin-bottom: 30px;
+}
+
+#content .signup-form input[type=text], #content .signup-form input[type=password], #content .signup-form input[type=email]{
+  border: none;
+  border-bottom: 1px solid #2a2b2d;
+  padding: 10px;
+  background: transparent;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+#content .signup-form input[type=text]:focus, #content .signup-form input[type=password]:focus, #content .signup-form input[type=email]:focus{
+  border-bottom: 2px solid #6F4074;
+}
+
+#content .signup-form input[type=submit]{
+  padding:10px;
+  border-radius: 4px;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#content .signup-form input[type=submit]:hover{
+  border: solid #2a2b2d 1px;
+  background : #2a2b2d;
+  color:white;
+}
+
+#content .signup-form .errorlist li{
+  list-style-type: none;
+  color: red;
+  text-align: center;
+}
+
+.mynotes_display{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.mynotes_display a{
+  text-decoration: none;
+  color: white;
+  border: 1px solid #6F3F76;
+  background: rgba(0,0,0,0.1);
+  padding:10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Styling for mobile devices */
+
+@media screen and (max-width: 760px){
+
+  #header .tools{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #header .tools .dropbtn{
+    padding: 5px;
+    border-radius: 4px;
+    display: block;
+    background: transparent;
+    border: solid #6F4074 1px;
+    cursor: pointer;
+    color: #6F4074;
+    clear: both;
+  }
+
+  #header .tools .show{
+    display: flex;
+    flex-flow: column;
+    display: run-in;
+    padding: 0;
+    margin: 2px;
+  }
+
+  #header .tools li{
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    border: solid #6F4074 1px;
+    border-top: 0;
+    margin-right: 10px;
+    float: left;
+    border-radius: 4px;
+  }
+
+  #header .logout button{
+    padding: 5px;
+  }
+
+  #header .feedback a{
+    padding: 3px;
+  }
+
+  #tools_list{
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    display: none;
+  }
+
+  .papers{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  #filter-div .filter-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .papers .paper{
+    padding: 5px;
+  }
+
+  .links{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+.links .link{
+  padding: 5px;
+}
+
+  .notes{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .notes .note{
+    padding: 5px;
+  }
+
+  #footer{
+    background: #2a2b2d;
+  }
+
+  #filter-div .filter-form #id_branch, #filter-div .filter-form #id_semester, #filter-div .filter-form #id_year{
+    border: none;
+    border-bottom: 1px solid #6F4074;
+    background: transparent;
+    outline: none;
+    text-align: center;
+    margin-right: 0;
+    float: right;
+  }
+
+  .about a:hover, .contact a:hover{
+    border: solid white 1px;
+    background : #2a2b2d;
+    color: white;
+  }
+
+  .mynotes_display{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* Styling the about section */
+.about_1, .about_2, .about_3{
+  text-align: center;
+  max-width: 720px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.about_3 ul{
+  text-align: center;
+  padding: 0;
+}
+
+.about_3 li{
+  list-style-type: none;
+
+}
+
+/* Styling the contact section */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background: rgba(255,255,255,0.2);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card .title {
+  color: #2a2b2d;
+  font-size: 18px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card button:hover, .card a:hover {
+  opacity: 0.7;
+}
+
+/* Styling the mynotes section */
+
+.mynotes{
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+    /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   justify-content: center;
+   align-items: center;
+}
+
+.mynotesContent{
+   background-color: #fefefe;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #888;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: minmax(50px, auto);
+   grid-gap: 10px;
+  border-radius: 4px;
+}
+
+.mynotesContent h2{
+  margin: 0;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.mynotesContent .mynotes-form{
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-flow: column;
+}
+
+.mynotesContent .mynotesHeader{
+  grid-column: 1/4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row-reverse;
+}
+
+.mynotes-form #id_title, #id_body{
+  border: none;
+  border-bottom: 1px solid #2a2b2d;
+  padding: 2%;
+  background: transparent;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+}
+
+#addMynote{
+  padding:5px;
+  border-radius: 4px;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  outline: none;
+}
+
+#addMynote:hover{
+  border: solid #2a2b2d 1px;
+  background-color: #2a2b2d;
+  color: white;
+}
+
+.mynotes-form #id_slug, .mynotes-form label[for='id_slug']{
+ display: none;
+}
+
+.mynotes-form input[type=submit]{
+  padding:5px;
+  border-radius: 4px;
+  background: transparent;
+  border: solid #6F4074 1px;
+  cursor: pointer;
+  color: #2a2b2d;
+  font-size: 12px;
+  outline: none;
+}
+
+.mynotes-form input[type=submit]:hover{
+  border: solid #2a2b2d 1px;
+  background-color: #2a2b2d;
+  color: white;
+}
+
+.close{
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    grid-column: 4;
+    top: 0;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mynote_detail{
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.mynote_detail .mynote{
+  color: white;
+}

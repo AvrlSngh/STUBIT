@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  <h1 style="font-size:28px;"> Login For Stubit</h1>
+  <form action="" class="site-form" method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    {{form}}
+    {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{request.GET.next}}">
+    {% endif %}
+    <input type="submit" value="Login">
+    {% if request.GET.next %}
+    <div class="warning">
+      <p>You need to login first</p>
+    <i class="material-icons" style="color:red;">warning</i>
+
+    </div>
+    {% endif %}
+  </form>
+{% endblock %}

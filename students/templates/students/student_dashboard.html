@@ -1,0 +1,36 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+Student->Dashboard
+{% endblock %}
+{% block content %}
+<h1>All your stuff is here. This is your dashboard</h1>
+<button id="addMynote">Add a New Note</button>
+<div class="mynotes" id="mynotesID">
+
+
+  <div class="mynotesContent">
+    <div class="mynotesHeader">
+    <span class="close">&times;</span>
+    <h2>Add Quick Notes</h2>
+    </div>
+  <form action="" method="post" class="mynotes-form">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save">
+  </form>
+  </div>
+</div>
+  <div class="mynotes_display">
+    {% for mynote in mynotes %}
+    <a href="{% url 'students:detail' slug=mynote.slug%}" style="text-decoration: none;" target="_blank">
+    <div class="mynote_brief">
+    <h2>{{ mynote.title }}</h2>
+      <p>{{ mynote.snippet }}</p>
+      <p>{{ mynote.date }}</p>
+      </div>
+      </a>
+    {% endfor %}
+  </div>
+
+{% endblock %}

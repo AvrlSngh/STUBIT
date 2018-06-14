@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="mynote_detail">
+  <div class="mynote">
+    <h2>{{mynote.title}}</h2>
+    <p>{{mynote.body}}</p>
+    <p>{{mynote.date}}</p>
+  </div>
+</div>
+
+{% endblock %}

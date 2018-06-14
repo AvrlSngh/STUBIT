@@ -1,0 +1,33 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+Dashboard->Notes
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Subject Notes</h1>
+<div id="filter-div">
+  <form action="" method="get" class="filter-form">
+    {{ filter.form.as_p }}
+    <input type="submit" value="Search" class="filter-search">
+  </form>
+</div>
+    <div class="notes">
+      {% for note in filter.qs %}
+          <a href="{{note.file.url}}" style="text-decoration: none;" target="_blank">
+          <div class="note">
+          <h2>{{ note.title }}</h2>
+            <p><b>{{note.subject}} - {{note.time_period}} - {{note.year}}</b></p>
+            <p>{{note.branch}}  -  {{note.semester}} Semester</p>
+            <p><b>Uploaded By - </b><i>{{note.uploaded_by}}</i></p>
+            </div>
+            </a>
+      {% endfor %}
+    </div>
+{% endblock %}
+
+{% block upload %}
+<li>
+<a href="{% url 'teachers:upload_notes'%}" class="upload">Upload Notes</a>
+</li>
+{% endblock %}

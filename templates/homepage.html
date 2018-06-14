@@ -1,0 +1,89 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stubit | Seek Knowledge</title>
+    <link rel="icon" href="{% static 'logo.ico' %}">
+    <link rel="stylesheet" href="{% static 'home_styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <style type="text/css">
+      #section{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'background.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+</head>
+<body>
+  <div id="wrapper">
+  <header id="header">
+    <div class="home_logo">
+    <a href="{% url 'homepage' %}">
+      <img src="{% static 'logo.ico' %}" alt="">
+    </a>
+    </div>
+    <div id="accounts_links">
+      <ul>
+        {% if not user.is_authenticated %}
+        <li class="login-link"><a href="{% url 'accounts:login'%}">Login</a></li>
+        <li class="signup-link"><a href="{% url 'accounts:signup'%}">Create Account</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div id="dashboard_links">
+      <ul>
+        {% if user.is_teacher or not user.is_authenticated %}
+        <li class="teacher_dashboard_link"><a href="{% url 'teachers:teacher_dashboard'%}">Teacher Dashboard</a></li>
+        {% endif %}
+        {% if not user.is_teacher or not user.is_authenticated %}
+        <li class="student_dashboard_link"><a href="{% url 'students:student_dashboard'%}">Student Dashboard</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </header>
+  <section id="section">
+    <div class="notes">
+      <h1>Understand the concepts in class and take <b>Notes</b> from here.</h1>
+    </div>
+    <div class="papers">
+      <h1>Practice exam questions a night or a month before exam by previous year <b>Papers</b> with solutions.</h1>
+    </div>
+    <div class="timeline">
+      <h1>See what you have to do in a semester in order to do well in college with your personalized <b>Timeline</b>.</h1>
+    </div>
+    <div class="attendance">
+      <h1>Trace your <b>Attendance</b> of every subject uploaded by your respective faculty.</h1>
+    </div>
+    <div class="links">
+      <h1>Every thing you need online related to your syllabus is here with <b>Links</b>.</h1>
+    </div>
+    <div class="notice_board">
+      <h1>Get Updated of what's happening in your college with this live <b>Notice Board</b>.</h1>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="about">
+      <a href="{% url 'about' %}">
+        About
+      </a>
+    </div>
+    <div class="home_logo">
+    <a href="{% url 'homepage' %}">
+      <img src="{% static 'logo.ico' %}" alt="">
+    </a>
+    <h6>Stubit</h6>
+    </div>
+    <div class="contact">
+      <a href="{% url 'contact'%}">
+        Contact
+      </a>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

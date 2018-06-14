@@ -1,0 +1,34 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+Dashboard->Papers
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Previous Papers</h1>
+<div id="filter-div">
+  <form action="" method="get" class="filter-form">
+    {{ filter.form.as_p }}
+    <input type="submit" value="Search" class="filter-search">
+  </form>
+</div>
+    <div class="papers">
+    {% for paper in filter.qs %}
+          <a href="{{paper.file.url}}" style="text-decoration: none;" target="_blank">
+          <div class="paper">
+          <h2>{{ paper.title }}</h2>
+            <p><b>{{paper.subject}} - {{paper.time_period}} - {{paper.year}}</b></p>
+            <p>{{paper.branch}}  -  {{paper.semester}} Semester</p>
+            <p><b>Uploaded By - </b><i>{{paper.uploaded_by}}</i></p>
+            </div>
+            </a>
+      {% endfor %}
+
+    </div>
+{% endblock %}
+
+{% block upload %}
+<li>
+<a href="{% url 'teachers:upload_paper'%}" class="upload">Upload Paper</a>
+</li>
+{% endblock %}

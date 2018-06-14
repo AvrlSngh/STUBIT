@@ -1,0 +1,12 @@
+{% extends 'base_layout.html'%}
+
+{% block content %}
+<div class="upload_paper">
+  <h1>Upload a paper</h1>
+  <form action="{% url 'teachers:upload_paper'%}" class="site-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{upload_paper_form}}
+    <input type="submit" value="Upload">
+  </form>
+</div>
+{% endblock %}

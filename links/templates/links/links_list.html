@@ -1,0 +1,33 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+Dashboard->Links
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Topic Links</h1>
+<div id="filter-div">
+  <form action="" method="get" class="filter-form">
+    {{ filter.form.as_p }}
+    <input type="submit" value="Search" class="filter-search">
+  </form>
+</div>
+    <div class="links">
+      {% for link in filter.qs %}
+          <a href="{{link.link_address}}" style="text-decoration: none;" target="_blank">
+          <div class="link">
+          <h2>{{ link.topic_of_link }}</h2>
+            <p><b>{{link.subject}} - {{link.time_period}}</b></p>
+            <p>{{link.branch}}  -  {{link.semester}} Semester</p>
+            <p><b>Uploaded By - </b><i>{{link.uploaded_by}}</i></p>
+            </div>
+            </a>
+      {% endfor %}
+    </div>
+{% endblock %}
+
+{% block upload %}
+<li>
+<a href="{% url 'teachers:upload_links'%}" class="upload">Upload a Link</a>
+</li>
+{% endblock %}
